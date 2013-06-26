@@ -23,7 +23,7 @@ module SimpleEmailTracker
 
     def visit_by request
       country = get_country_from_ip(request.ip)
-      now = Time.now
+      now = Time.zone.now
       self.count += 1
       self.first_visited_at = now unless self.first_visited_at
       self.last_visited_at = now
