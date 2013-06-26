@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.1.12"
+  s.add_dependency "rails", "~> 3.1.8"
   s.add_dependency 'haml'
   s.add_dependency 'uuid'
 
