@@ -26,7 +26,9 @@ module SimpleEmailTracker
 
     def visit_by(request,email)
       puts("=============reques = #{request.inspect}")
-      country = get_country_from_ip(request.ip)
+      puts("========forworded for=====#{request.env["HTTP_X_FORWARDED_FOR"]}")
+      puts("========remote ip=====#{request.ip}")
+      country = get_country_from_ip(request.env["HTTP_X_FORWARDED_FOR"])
       now = Time.zone.now
       self.count += 1
       self.first_visited_at = now unless self.first_visited_at
